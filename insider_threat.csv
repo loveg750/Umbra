@@ -1,6 +1,0 @@
-event_id,timestamp,user,hostname,event_type,file_access,bytes_copied,destination,notes
-1,2025-06-04T11:05:12Z,employee3,WS-07,large_data_read,C:\Corp\Finance\2024_bonus.xlsx,50000,,"Unusual read event"
-2,2025-06-04T11:07:42Z,employee3,WS-07,usb_insert,,,"USB: Kingston-32GB","USB storage inserted"
-3,2025-06-04T11:10:21Z,employee3,WS-07,file_copy,C:\Corp\Finance\2024_bonus.xlsx,50000,USB,"Sensitive file copied to USB"
-4,2025-06-04T11:12:10Z,employee3,WS-07,file_copy,C:\Corp\HR\compensation.db,78000,USB,"Another sensitive file copied"
-5,2025-06-04T11:13:55Z,employee3,WS-07,network_transfer,C:\Corp\Finance,2400000,203.0.113.44,"Data exfil to offshore server"
