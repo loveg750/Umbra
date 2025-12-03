@@ -1,0 +1,4 @@
+timestamp,recipient,sender,subject,filter_action,notes,log_text
+2025-03-01T08:14:22Z,executive1@corp.com,execsupport@corp-co.com,"URGENT: Board Packet Update",allowed,"Lookalike domain .co","Email bypassed filter, attachment suspicious"
+2025-03-01T08:15:01Z,executive1@corp.com,,,attachment_opened,"User opened malicious PDF","PDF executed embedded macro"
+2025-03-01T08:15:03Z,executive1@corp.com,,,malicious_macro,"Macro dropped payload","Macro executed PowerShell"

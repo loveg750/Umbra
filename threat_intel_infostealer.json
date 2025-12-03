@@ -1,0 +1,51 @@
+{
+  "rules": [
+    {
+      "id": "TI-INFOSTEALER-001",
+      "type": "threat_intel",
+      "name": "Infostealer C2 IP Match",
+      "severity": "critical",
+      "indicators": {
+        "c2_ips": [
+          "185.193.66.45",
+          "91.215.85.77",
+          "51.38.112.202",
+          "193.124.32.145"
+        ]
+      },
+      "description": "Outbound connections to known info-stealer command-and-control infrastructure.",
+      "recommended_action": "Block the destination IP, isolate host, and check for credential theft."
+    },
+    {
+      "id": "TI-INFOSTEALER-002",
+      "type": "threat_intel",
+      "name": "Infostealer C2 Domain Match",
+      "severity": "critical",
+      "indicators": {
+        "domains": [
+          "upd-checker.net",
+          "sync-data-telemetry.com",
+          "getbrowseraddon.net",
+          "dllupdate-check.com"
+        ]
+      },
+      "description": "Communication with domains used by RedLine, Lumma, Vidar, and Raccoon Stealer.",
+      "recommended_action": "Review DNS logs, block domain, and recover compromised credentials."
+    },
+    {
+      "id": "TI-INFOSTEALER-003",
+      "type": "threat_intel",
+      "name": "Infostealer Hash Match",
+      "severity": "high",
+      "indicators": {
+        "sha256": [
+          "d3b1a9fe0d2a1da342017ca1872c9918abc911fa302f5e63fd0fb9f9931df4f9",
+          "a7c4cc9fdb8204cdad1d75c75484f03b8cb1432b0fb4c0791d41d89f33e38422",
+          "28b0485b1c0797fe57bba853e78e948f9fd9586e251dd0cb6a5c1d3f8ef20cff"
+        ]
+      },
+      "description": "Execution of malware samples linked to major infostealer campaigns.",
+      "recommended_action": "Quarantine sample, perform memory analysis, reset credentials."
+    }
+  ]
+}

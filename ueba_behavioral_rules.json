@@ -1,0 +1,34 @@
+{
+  "rules": [
+    {
+      "id": "UEBA-001",
+      "name": "Behavioral Deviation - Login Pattern",
+      "severity": "medium",
+      "pattern": {
+        "baseline_deviation_percent": 60,
+        "login_time_anomaly": true
+      },
+      "description": "User logging in at a time radically different from their baseline."
+    },
+    {
+      "id": "UEBA-002",
+      "name": "Workload Behavioral Spike",
+      "severity": "medium",
+      "pattern": {
+        "baseline_file_access": "normal",
+        "detected_file_access": "10x"
+      },
+      "description": "Large increase in work intensity often correlates with malicious staging."
+    },
+    {
+      "id": "UEBA-003",
+      "name": "Behavioral Drift Over Time",
+      "severity": "low",
+      "pattern": {
+        "multi_day_deviation": true,
+        "new_application_usage": true
+      },
+      "description": "Slow shifts in user behavior which may indicate social engineering or account misuse."
+    }
+  ]
+}

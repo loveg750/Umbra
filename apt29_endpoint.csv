@@ -1,0 +1,5 @@
+timestamp,hostname,user,event_type,process,file_path,notes
+2025-03-01T08:18:12Z,WS-22,executive1,process_start,powershell.exe,C:\Windows\System32\powershell.exe,"Suspicious PS after phishing"
+2025-03-01T08:18:15Z,WS-22,executive1,file_drop,C:\Users\exec\AppData\Roaming\mscache.dll,,"Backdoor dropped"
+2025-03-01T08:18:22Z,WS-22,executive1,schedule_task_add,schtasks.exe,,,"Persistence via scheduled task"
+2025-03-01T08:18:55Z,WS-22,executive1,registry_mod,reg.exe,,,"Persistence via Run key"

@@ -1,0 +1,6 @@
+timestamp,actor_ip,aws_user,action,target,notes
+2025-04-12T10:00:12Z,203.0.113.200,iam-admin,ListUsers,iam,"Baseline"
+2025-04-12T10:02:11Z,203.0.113.200,iam-admin,CreateAccessKey,user:backup,"Suspicious key creation"
+2025-04-12T10:05:45Z,203.0.113.200,iam-admin,AttachPolicy,AdminAccess,"Privilege escalation"
+2025-04-12T10:10:11Z,203.0.113.200,iam-admin,StartInstances,ec2,"Crypto-mining attempt"
+2025-04-12T10:11:44Z,203.0.113.200,iam-admin,GetObject,s3://corp-sensitive/hr.db,"Data theft from S3"

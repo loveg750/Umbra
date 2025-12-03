@@ -1,0 +1,5 @@
+timestamp,user_ip,azure_user,action,resource,notes
+2025-04-13T12:00:01Z,185.100.87.22,billing-admin,LoginSuccess,,,"Baseline login"
+2025-04-13T12:01:32Z,185.100.87.22,billing-admin,AddServicePrincipal,,,"Suspicious SP created"
+2025-04-13T12:02:55Z,185.100.87.22,billing-admin,GrantRole,Owner,"Privilege escalation"
+2025-04-13T12:04:55Z,185.100.87.22,billing-admin,Download,Blob:finance/contracts.zip,"Sensitive data theft"

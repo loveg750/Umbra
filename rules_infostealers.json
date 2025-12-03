@@ -1,0 +1,37 @@
+[
+  {
+    "rule_id": "INFOSTEALER-CREDENTIAL-DUMP-01",
+    "name": "Infostealer Credential Dump Detected",
+    "family": "infostealer",
+    "severity": "critical",
+    "description": "Credentials appear in an infostealer dump indicating compromise and unauthorized credential exposure.",
+    "condition": "log_type == 'infostealers'",
+    "mitre_techniques": ["T1555", "T1539"],
+    "tactics": ["Credential Access", "Discovery"],
+    "summary": "Login credentials harvested via infostealer malware. Immediate credential reset advised."
+  },
+
+  {
+    "rule_id": "LOLBIN-MSBUILD-EXECUTION-01",
+    "name": "MSBuild Used as Lateral Execution / Living Off The Land",
+    "family": "infostealer",
+    "severity": "high",
+    "description": "MSBuild.exe appears in execution path indicating possible LOLBin execution.",
+    "condition": "process_name.str.contains('MSBuild', case=False)",
+    "mitre_techniques": ["T1127"],
+    "tactics": ["Execution", "Defense Evasion"],
+    "summary": "MSBuild.exe executed as part of credential-stealing workflow."
+  },
+
+  {
+    "rule_id": "MULTI-DOMAIN-COMPROMISE-01",
+    "name": "Multiple Internal Domains Exposed",
+    "family": "infostealer",
+    "severity": "critical",
+    "description": "Compromise spans more than one internal subdomain or system.",
+    "condition": "domain.nunique() > 1",
+    "mitre_techniques": ["T1590", "T1087"],
+    "tactics": ["Reconnaissance", "Credential Access"],
+    "summary": "Multiple subdomains impacted, indicating lateral credential exposure across environments."
+  }
+]

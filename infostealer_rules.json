@@ -1,0 +1,297 @@
+[
+  {
+    "id": "INF-001",
+    "name": "Browser Credential Theft",
+    "description": "Process accessing browser credential stores (Chrome/Edge/Firefox) unexpectedly.",
+    "pattern": ["Login Data", "Local State", "Cookies", "Web Data"],
+    "severity": "high",
+    "tags": ["infostealer", "credential_access"]
+  },
+  {
+    "id": "INF-002",
+    "name": "Suspicious Telegram/Discord Token Access",
+    "description": "Process reading messaging app tokens — common infostealer behavior.",
+    "pattern": ["Discord\\Local Storage", "Telegram Desktop\\tdata"],
+    "severity": "high",
+    "tags": ["infostealer", "token_theft"]
+  },
+  {
+    "id": "INF-003",
+    "name": "Crypto Wallet Enumeration",
+    "description": "Process touches known wallet directories or extension data.",
+    "pattern": ["Exodus", "MetaMask", "Wallet", "Ledger", "Phantom"],
+    "severity": "critical",
+    "tags": ["infostealer", "crypto_theft"]
+  },
+  {
+    "id": "INF-004",
+    "name": "Suspicious File Collection",
+    "description": "Process enumerating sensitive file extensions commonly stolen.",
+    "pattern": [".kdbx", ".txt", ".pdf", ".xlsx", ".doc", ".csv"],
+    "severity": "medium",
+    "tags": ["infostealer", "collection"]
+  },
+  {
+    "id": "INF-005",
+    "name": "Exfiltration via HTTP POST",
+    "description": "Suspicious POST request to untrusted IP or domain typical for infostealers.",
+    "pattern": ["POST /", "application/json", "multipart/form-data"],
+    "severity": "high",
+    "tags": ["infostealer", "exfiltration"]
+  },
+  {
+    "id": "INF-006",
+    "name": "C2 Using Discord Webhooks",
+    "description": "Outbound connections to Discord webhook URLs.",
+    "pattern": ["discord.com/api/webhooks"],
+    "severity": "critical",
+    "tags": ["infostealer", "c2"]
+  },
+  {
+    "id": "INF-007",
+    "name": "C2 Using Telegram Bot API",
+    "description": "Hit to Telegram Bot endpoints.",
+    "pattern": ["api.telegram.org/bot"],
+    "severity": "critical",
+    "tags": ["infostealer", "c2"]
+  },
+  {
+    "id": "INF-008",
+    "name": "Self-Deleting Dropper Behavior",
+    "description": "Process spawning cmd/powershell delete commands for itself.",
+    "pattern": ["del %~f0", "Remove-Item -Path"],
+    "severity": "high",
+    "tags": ["infostealer", "dropper"]
+  },
+
+   {
+    "id": "INF-009",
+    "name": "Corporate Portal Credentials Exposed",
+    "description": "Credentials associated with likely internal or corporate web portals (ticketing, intranet, admin, or project tools).",
+    "pattern": [
+      "jira.",
+      "confluence.",
+      "bitbucket.",
+      "gitlab.",
+      "intranet.",
+      "vpn.",
+      "sharepoint.",
+      "/secure/",
+      "/wp-admin",
+      "/admin",
+      "service-now",
+      "servicedesk"
+    ],
+    "severity": "high",
+    "tags": ["infostealer", "credential_dump", "corporate"]
+  },
+  {
+    "id": "INF-010",
+    "name": "AD / SSO / IdP Credentials Exposed",
+    "description": "Credentials for SSO, identity providers, or central authentication platforms (Okta, Azure AD, Google, Auth0, etc.).",
+    "pattern": [
+      "okta.com",
+      "okta",
+      "login.microsoftonline.com",
+      "portal.azure.com",
+      "accounts.google.com",
+      "idp.",
+      "sso.",
+      "auth0.com",
+      "onelogin",
+      "pingidentity",
+      "signin.aws.amazon.com"
+    ],
+    "severity": "critical",
+    "tags": ["infostealer", "credential_dump", "sso", "idp", "identity"]
+  },
+  {
+    "id": "INF-011",
+    "name": "Cloud Console / Production Credentials Exposed",
+    "description": "Credentials giving access to cloud consoles or production environments (AWS, Azure, GCP, OCI, DigitalOcean, etc.).",
+    "pattern": [
+      "console.aws.amazon.com",
+      "signin.aws.amazon.com",
+      "portal.azure.com",
+      "cloud.google.com",
+      "console.cloud.google.com",
+      "cloud.ibm.com",
+      "cloud.oracle.com",
+      "digitalocean.com",
+      "portal.azure.com/#blade/",
+      "management.azure.com"
+    ],
+    "severity": "critical",
+    "tags": ["infostealer", "credential_dump", "cloud", "prod"]
+  },
+  {
+    "id": "INF-012",
+    "name": "Email / Exchange Admin Credentials Exposed",
+    "description": "Credentials for mail admin portals or webmail entry points (O365 admin, Exchange, Zimbra, generic webmail).",
+    "pattern": [
+      "outlook.office.com/ecp",
+      "/owa/",
+      "admin.microsoft.com",
+      "exchange.",
+      "mail.",
+      "webmail.",
+      "zimbra",
+      "roundcube",
+      "squirrelmail"
+    ],
+    "severity": "high",
+    "tags": ["infostealer", "credential_dump", "email_admin"]
+  },
+  {
+    "id": "INF-013",
+    "name": "Banking / Payment Processor Credentials Exposed",
+    "description": "Credentials that appear to belong to banking portals or payment processors (merchant / gateway access).",
+    "pattern": [
+      "bank",
+      "ebanking",
+      "onlinebanking",
+      "stripe.com",
+      "dashboard.stripe.com",
+      "paypal.com",
+      "braintreepayments",
+      "adyen",
+      "checkout",
+      "payments.",
+      "merchant"
+    ],
+    "severity": "critical",
+    "tags": ["infostealer", "credential_dump", "finance", "high_value"]
+  },
+  {
+    "id": "INF-014",
+    "name": "Remote Access / VPN Portal Credentials Exposed",
+    "description": "Credentials linked to VPNs or remote access gateways (Citrix, RDP gateways, SSL VPN, ZTNA portals).",
+    "pattern": [
+      "vpn.",
+      "/remote",
+      "/rdweb",
+      "citrix",
+      "global-protect",
+      "anyconnect",
+      "fortigate",
+      "fortinet",
+      "pulse secure",
+      "zscaler",
+      "remoteaccess",
+      "jumpserver",
+      "bastion"
+    ],
+    "severity": "critical",
+    "tags": ["infostealer", "credential_dump", "remote_access", "vpn"]
+  },
+  {
+    "id": "INF-015",
+    "name": "Developer / CI/CD Credentials Exposed",
+    "description": "Credentials tied to source control, CI/CD platforms, or artifact registries (GitHub, GitLab, Jenkins, Artifactory, etc.).",
+    "pattern": [
+      "github.com",
+      "gitlab.com",
+      "bitbucket.org",
+      "azure-devops",
+      "dev.azure.com",
+      "jenkins",
+      "git.",
+      "nexus.",
+      "artifactory",
+      "harbor.",
+      "registry."
+    ],
+    "severity": "high",
+    "tags": ["infostealer", "credential_dump", "devops", "source_control"]
+  },
+  {
+    "id": "INF-016",
+    "name": "Privileged / Admin Account Name Patterns",
+    "description": "Credentials with usernames suggesting privileged or shared admin/service accounts.",
+    "pattern": [
+      "admin",
+      "administrator",
+      "root",
+      "svc_",
+      "service_",
+      "_svc",
+      "ops_",
+      "dbadmin",
+      "secadmin",
+      "itadmin"
+    ],
+    "severity": "high",
+    "tags": ["infostealer", "credential_dump", "privileged_account"]
+  },
+
+   {
+    "id": "INF-017",
+    "name": "Corporate Credential on Consumer Services",
+    "description": "Corporate-looking usernames (e.g., business email) used on consumer platforms (social, streaming, shopping).",
+    "pattern": [
+      "@gmail.com",
+      "@yahoo.com",
+      "@outlook.com",
+      "@hotmail.com",
+      "facebook.com",
+      "instagram.com",
+      "tiktok.com",
+      "netflix.com",
+      "spotify.com",
+      "amazon.com"
+    ],
+    "severity": "medium",
+    "tags": ["infostealer", "password_reuse", "consumer_service"]
+  },
+  {
+    "id": "INF-018",
+    "name": "Same Login Used Across Multiple Domains (Heuristic)",
+    "description": "Heuristic rule for detecting reused credentials across different domains. Requires correlation logic across rows.",
+    "pattern": [],
+    "severity": "high",
+    "tags": ["infostealer", "password_reuse", "correlation"],
+    "rule_type": "correlation",
+    "note": "Engine should group by login/user and count distinct domains; alert if count exceeds threshold."
+  },
+
+  {
+    "id": "INF-019",
+    "name": "Multiple Accounts from Same Device (Infostealer Host)",
+    "description": "Single host/PC has credentials for many distinct accounts or domains — classic infostealer host behavior.",
+    "pattern": [],
+    "severity": "high",
+    "tags": ["infostealer", "credential_dump", "correlation", "multi_account_host"],
+    "rule_type": "correlation",
+    "note": "Group by host/pc and count distinct logins/domains. Alert when volume crosses threshold (e.g., >10 accounts)."
+  },
+  {
+    "id": "INF-020",
+    "name": "Same Account Across Multiple Hosts",
+    "description": "Same account or email appears in credentials from multiple distinct endpoints, indicating widespread compromise or shared password reuse.",
+    "pattern": [],
+    "severity": "high",
+    "tags": ["infostealer", "credential_dump", "correlation", "lateral_exposure"],
+    "rule_type": "correlation",
+    "note": "Group by login/user and count distinct hosts/pc; alert when exposed from >1 host."
+  },
+  {
+    "id": "INF-021",
+    "name": "High-Value Domain Credential Exposure (Generic)",
+    "description": "Generic high-value credential exposure where URL or domain contains keywords for admin, payment, production, or security tooling.",
+    "pattern": [
+      "admin.",
+      "/admin",
+      "/manage",
+      "prod.",
+      "payment.",
+      "secure.",
+      "vault.",
+      "security.",
+      "monitor.",
+      "siem",
+      "soar"
+    ],
+    "severity": "high",
+    "tags": ["infostealer", "credential_dump", "high_value"]
+  }
+]
