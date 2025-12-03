@@ -1,3 +1,0 @@
-timestamp,source_ip,destination_ip,bytes_sent,bytes_received,notes
-2025-06-06T09:07:01Z,192.168.1.30,185.224.77.101,350,120,"Beacon"
-2025-06-06T09:09:44Z,192.168.1.30,185.224.77.101,600000,24000,"C2 data upload"
