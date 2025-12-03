@@ -1,5 +1,0 @@
-timestamp           , user_ip     , gcp_user       , action              , resource                        , notes
-2025-04-14T11:14:02Z, 102.133.7.92, analytics-admin, LoginSuccess        ,                                 ,             , 
-2025-04-14T11:14:44Z, 102.133.7.92, analytics-admin, CreateServiceAccount,                                 ,             , "Backdoor SA created"
-2025-04-14T11:15:12Z, 102.133.7.92, analytics-admin, GrantRole           , roles/owner                     , "Elevation"
-2025-04-14T11:16:40Z, 102.133.7.92, analytics-admin, ReadFile            , gs://corp-sensitive/strategy.pdf, "Exfil prep"
