@@ -1,0 +1,5 @@
+event_id,timestamp,hostname,user,event_type,process,file_path,notes
+1,2025-06-03T10:05:15Z,WS-09,jdoe,token_manipulation,powershell.exe,C:\Windows\System32\powershell.exe,"Attempt to steal SYSTEM token"
+2,2025-06-03T10:05:18Z,WS-09,jdoe,uac_bypass,fodhelper.exe,C:\Windows\System32\fodhelper.exe,"Known UAC bypass method"
+3,2025-06-03T10:05:25Z,WS-09,SYSTEM,privilege_escalation,rundll32.exe,C:\Windows\System32\rundll32.exe,"User elevated to SYSTEM"
+4,2025-06-03T10:05:55Z,WS-09,SYSTEM,shadow_credentials,dsregcmd.exe,C:\Windows\System32\dsregcmd.exe,"Persisting with device credentials"

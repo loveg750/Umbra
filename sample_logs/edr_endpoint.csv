@@ -1,0 +1,4 @@
+timestamp,hostname,user,event_type,process,file_path,notes
+2025-06-06T09:06:15Z,WS-09,asmith,process_start,powershell.exe,C:\Windows\System32\powershell.exe,"Suspicious PS after login"
+2025-06-06T09:06:22Z,WS-09,asmith,file_drop,C:\Users\asmith\AppData\Roaming\stager.dll,,"Malicious DLL dropped"
+2025-06-06T09:06:34Z,WS-09,asmith,process_start,rundll32.exe,C:\Windows\System32\rundll32.exe,"DLL execution"

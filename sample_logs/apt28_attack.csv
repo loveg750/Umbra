@@ -1,0 +1,6 @@
+timestamp,host,user,event_type,process,args,notes
+2025-03-11T09:12:14Z,FIN-WS01,j.smith,process_start,rundll32.exe,sys_init.dll,"DLL side-loading"
+2025-03-11T09:12:22Z,FIN-WS01,j.smith,process_start,cmd.exe,/c whoami,"Recon"
+2025-03-11T09:12:30Z,FIN-WS01,j.smith,reg_mod,reg.exe,HKCU\Software\Microsoft\Windows\CurrentVersion\Run,"Persistence"
+2025-03-11T09:13:05Z,FIN-WS01,j.smith,process_start,powershell.exe,"Invoke-Mimikatz","Credential theft"
+2025-03-11T09:13:55Z,FIN-WS01,j.smith,file_exfil,,2200000,"Stolen creds exfiltrated"

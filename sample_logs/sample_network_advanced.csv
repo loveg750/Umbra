@@ -1,0 +1,9 @@
+timestamp,host,source_ip,dest_ip,domain,direction,is_tor_exit,bytes_out_mb,threat_intel_hit,threat_feed_name,dga_score,new_destination_for_env
+2025-01-01T10:00:00Z,WS-01,10.0.1.10,142.250.190.78,www.google.com,outbound,False,1.2,False,,0.05,False
+2025-01-01T10:01:00Z,WS-02,10.0.1.11,185.193.66.45,,outbound,False,3.4,True,BAD_IP_FEED,0.10,False
+2025-01-01T10:02:00Z,WS-03,10.0.1.12,91.215.85.77,upd-checker.net,outbound,False,0.8,True,MAL_DOM_FEED,0.82,True
+2025-01-01T10:03:00Z,WS-04,10.0.1.13,51.38.112.202,,outbound,True,5.0,False,,0.10,True
+2025-01-01T10:04:00Z,WS-05,10.0.1.14,203.0.113.10,files.corp.internal,outbound,False,120.0,False,,0.05,False
+2025-01-01T10:05:00Z,WS-05,10.0.1.14,203.0.113.10,files.corp.internal,outbound,False,5.0,False,,0.05,False
+2025-01-01T10:06:00Z,WS-06,10.0.1.15,198.51.100.200,cdn-safe.example,outbound,False,0.4,False,,0.05,True
+2025-01-01T10:07:00Z,FW-EDGE,185.193.66.45,10.0.1.99,,inbound,False,0.5,True,BAD_IP_FEED,0.10,False

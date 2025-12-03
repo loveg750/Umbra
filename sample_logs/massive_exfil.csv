@@ -1,0 +1,5 @@
+event_id,timestamp,user,hostname,source_ip,destination_ip,bytes_exfiltrated,method,notes
+1,2025-06-05T13:00:01Z,dev1,WS-22,192.168.1.40,51.15.200.44,15000000,SFTP,"Large code repo exfil starting"
+2,2025-06-05T13:05:01Z,dev1,WS-22,192.168.1.40,51.15.200.44,35000000,SFTP,"Continuous multi-GB exfil"
+3,2025-06-05T13:10:01Z,dev1,WS-22,192.168.1.40,51.15.200.44,42000000,SFTP,"High-volume sustained transfer"
+4,2025-06-05T13:12:33Z,dev1,WS-22,192.168.1.40,51.15.200.44,1500000,SFTP,"Final burst"

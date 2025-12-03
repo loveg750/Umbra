@@ -1,0 +1,4 @@
+event_id,timestamp,user,host,action,notes,log_text
+1,2025-05-28T15:14:33Z,attacker,WORKSTATION-09,credential_dump,"Mimikatz run detected","Process mimikatz.exe dumped credentials."
+2,2025-05-28T15:16:01Z,attacker,WORKSTATION-09,psexec_use,"Attacker moved via PsExec","Remote execution to FILESERVER-02 initiated."
+3,2025-05-28T15:17:12Z,attacker,FILESERVER-02,shadow_copy,"Shadow copies deleted","Attacker deleted VSS snapshots."

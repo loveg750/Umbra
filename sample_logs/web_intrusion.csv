@@ -1,0 +1,6 @@
+timestamp,source_ip,method,uri,status,bytes,notes
+2025-05-15T07:00:11Z,203.0.113.99,GET,/index.php,200,5120,"Normal traffic"
+2025-05-15T07:02:44Z,203.0.113.99,GET,/admin.php,404,220,"Recon request"
+2025-05-15T07:05:17Z,203.0.113.99,POST,/upload,200,1024,"Malicious file upload"
+2025-05-15T07:05:22Z,203.0.113.99,GET,/shell.jsp,200,512,"Webshell executed"
+2025-05-15T07:10:05Z,203.0.113.99,POST,/shell.jsp?cmd=id,200,128,"Command execution"

@@ -1,0 +1,8 @@
+timestamp,user,host,channel,bytes_out_mb,exfil_channel,infostealer_stage,sensitive_hit,cloud_service,usb_device_id,event_type
+2025-01-01T12:00:00Z,alice,WS-01,usb,5.0,usb,None,True,,USB-1234,USB_DEVICE_CONNECTED
+2025-01-01T12:02:00Z,alice,WS-01,usb,55.0,usb,stage_3,True,,USB-1234,FILE_COPY
+2025-01-01T12:04:00Z,alice,WS-01,usb,0.5,usb,stage_3,True,,USB-1234,USB_DEVICE_REMOVED
+2025-01-01T12:10:00Z,dev1,WS-02,cloud,80.0,cloud,stage_2,True,personal_drive,,CLOUD_UPLOAD
+2025-01-01T12:15:00Z,dev1,WS-02,cloud,2.0,cloud,stage_2,False,personal_drive,,CLOUD_UPLOAD
+2025-01-01T12:20:00Z,ceo,WS-03,email,3.0,email,None,True,,,"EMAIL_SEND"
+2025-01-01T12:25:00Z,intern,WS-04,email,0.4,email,None,False,,,"EMAIL_SEND"

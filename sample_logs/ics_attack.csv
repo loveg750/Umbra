@@ -1,0 +1,6 @@
+timestamp,plc,tag_name,old_value,new_value,notes
+2025-06-02T02:10:11Z,PLC-7,chlorine_ppm,25,150,"Poisoning water mixture"
+2025-06-02T02:10:22Z,PLC-7,pump_speed,1200,6000,"Overdriving pump"
+2025-06-02T02:10:40Z,PLC-7,valve_state,open,closed,"Blocking pressure release"
+2025-06-02T02:11:05Z,PLC-7,safety_alarm,enabled,disabled,"Safety system bypass"
+2025-06-02T02:11:55Z,PLC-7,pressure,220,890,"Explosion-level pressure"

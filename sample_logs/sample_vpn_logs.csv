@@ -1,0 +1,11 @@
+event_id,timestamp,user,source_ip,country,connection_result,notes,log_text
+1,2025-05-21T07:55:12Z,jdoe,203.0.113.10,US,success,"Normal VPN login before work hours","User jdoe established a successful VPN connection from known US IP during expected hours."
+2,2025-05-21T08:10:45Z,asmith,198.51.100.42,US,success,"Standard connection","User asmith connected to VPN from known US residential IP."
+3,2025-05-21T11:22:09Z,knguyen,185.23.44.10,DE,failure,"Unusual foreign VPN attempt","User knguyen had a failed VPN login attempt from new_country not previously seen."
+4,2025-05-21T11:24:31Z,knguyen,185.23.44.10,DE,failure,"Repeated foreign attempts","User knguyen had 3 failed VPN login attempts from same foreign IP."
+5,2025-05-21T11:27:05Z,knguyen,185.23.44.10,DE,success,"Possible VPN compromise","User knguyen had multiple failed VPN logins followed by a successful connection from new_country."
+6,2025-05-21T13:02:17Z,intern,203.0.113.55,US,failure,"Incorrect password likely","Intern account failed VPN login twice from US IP with no further attempts."
+7,2025-05-21T23:58:44Z,admin,45.33.21.9,RU,failure,"Admin VPN attempt from high-risk region","Admin account admin had repeated failed VPN login attempts from high-risk region late at night."
+8,2025-05-22T00:03:19Z,admin,45.33.21.9,RU,success,"High-risk admin VPN access","Admin account admin gained VPN access from new_country after several failures."
+9,2025-05-22T04:15:02Z,svc_backup,10.0.0.5,US,success,"Scheduled off-hours job","Service account svc_backup connected via VPN during scheduled backup window."
+10,2025-05-22T06:30:39Z,jdoe,198.51.100.80,GB,success,"Possible travel or unusual location","User jdoe connected successfully from a new_country not seen in previous history."

@@ -1,0 +1,6 @@
+event_id,timestamp,host,user,stage,notes,log_text
+1,2025-05-24T07:12:22Z,WORKSTATION-02,user1,initial_access,"Phishing link clicked","User clicked link leading to malicious payload dropper."
+2,2025-05-24T07:12:24Z,WORKSTATION-02,user1,script_execution,"Malicious PowerShell executed","Encoded PowerShell downloaded executable from attacker domain."
+3,2025-05-24T07:12:30Z,WORKSTATION-02,user1,payload_deploy,"Ransomware deployed","Executable created processes encrypting user documents."
+4,2025-05-24T07:12:34Z,WORKSTATION-02,user1,file_encryption,"Rapid encryption detected",">1500 files encrypted within 45 seconds."
+5,2025-05-24T07:12:40Z,WORKSTATION-02,user1,ransom_note,"Ransom note dropped","README_RECOVER_FILES.txt written to desktop."

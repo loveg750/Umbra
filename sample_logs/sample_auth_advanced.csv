@@ -1,0 +1,12 @@
+timestamp,user,source_ip,country,result,is_corporate_vpn,user_compromised_flag,idp_name,login_device_type,geo_distance_km,prev_login_minutes_ago,failed_attempts_5m,account_locked,event_type
+2025-01-01T09:00:00Z,alice,10.0.0.5,US,SUCCESS,True,False,OktaMain,laptop,5,480,0,False,LOGIN
+2025-01-01T09:05:00Z,bob,10.0.0.10,US,FAILURE,False,False,OktaMain,desktop,0,15,1,False,LOGIN
+2025-01-01T09:07:00Z,bob,10.0.0.10,US,FAILURE,False,False,OktaMain,desktop,0,1,3,False,LOGIN
+2025-01-01T09:08:00Z,bob,10.0.0.10,US,FAILURE,False,False,OktaMain,desktop,0,0,7,True,ACCOUNT_LOCKOUT
+2025-01-01T09:10:00Z,ceo,203.0.113.77,US,SUCCESS,False,True,OktaMain,laptop,20,30,0,False,LOGIN
+2025-01-01T09:12:00Z,sec-eng,198.51.100.25,BR,SUCCESS,False,False,OktaMain,desktop,8000,10,0,False,LOGIN
+2025-01-01T09:15:00Z,dev1,91.215.85.77,RU,SUCCESS,False,False,OktaMain,laptop,9000,60,0,False,LOGIN
+2025-01-01T09:17:00Z,dev2,51.38.112.202,CN,SUCCESS,True,False,OktaMain,laptop,9000,120,0,False,LOGIN
+2025-01-01T09:20:00Z,intern,198.51.100.88,US,SUCCESS,False,False,UntrustedSAML,desktop,0,1440,0,False,LOGIN
+2025-01-01T09:25:00Z,svc-backup,10.0.5.20,US,SUCCESS,True,False,OktaMain,service,0,30,0,False,LOGIN
+2025-01-01T09:30:00Z,red-team,203.0.113.200,PL,SUCCESS,False,False,OktaMain,laptop,7500,5,12,False,LOGIN

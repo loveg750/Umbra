@@ -1,0 +1,7 @@
+timestamp,host,user,process_name,sha256,signer_trust_level,is_system_process,command_line,file_path,infostealer_suspected,threat_tool_flag
+2025-01-01T11:00:00Z,WS-01,alice,chrome.exe,1111111111111111111111111111111111111111111111111111111111111111,trusted,False,"chrome.exe --type=renderer","C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",False,False
+2025-01-01T11:01:00Z,WS-02,bob,weird.exe,d3b1a9fe0d2a1da342017ca1872c9918abc911fa302f5e63fd0fb9f9931df4f9,unsigned,False,"weird.exe","C:\\Users\\bob\\AppData\\Local\\Temp\\weird.exe",True,False
+2025-01-01T11:02:00Z,WS-03,ceo,update.exe,2222222222222222222222222222222222222222222222222222222222222222,revoked_or_abused,False,"update.exe /silent","C:\\Program Files\\Vendor\\update.exe",False,False
+2025-01-01T11:03:00Z,WS-04,analyst,mimikatz.exe,3333333333333333333333333333333333333333333333333333333333333333,unsigned,False,"mimikatz.exe privilege::debug","C:\\Tools\\mimikatz.exe",False,True
+2025-01-01T11:04:00Z,WS-05,intern,mimikatz_test.exe,4444444444444444444444444444444444444444444444444444444444444444,unsigned,False,"mimikatz_test.exe","C:\\Users\\intern\\Desktop\\mimikatz_test.exe",False,True
+2025-01-01T11:05:00Z,WS-06,svc-backup,backup.exe,5555555555555555555555555555555555555555555555555555555555555555,trusted,True,"backup.exe /schedule","C:\\Program Files\\Backup\\backup.exe",False,False

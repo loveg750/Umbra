@@ -1,0 +1,4 @@
+event_id,timestamp,host,user,tool,notes,log_text
+1,2025-05-30T12:12:22Z,WORKSTATION-09,unknown,mimikatz,"Credential dumping tool executed","mimikatz.exe accessed LSASS memory."
+2,2025-05-30T12:15:14Z,WORKSTATION-09,unknown,bloodhound,"AD enumeration","BloodHound ingested AD objects rapidly."
+3,2025-05-30T12:18:32Z,WORKSTATION-09,unknown,metasploit,"Exploit stage triggered","Meterpreter session started on host."

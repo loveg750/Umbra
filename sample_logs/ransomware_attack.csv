@@ -1,0 +1,10 @@
+event_id,timestamp,hostname,user,event_type,process,file_path,hash,notes
+1,2025-06-01T08:01:44Z,WS-12,jdoe,process_start,winword.exe,C:\Program Files\Microsoft Office\winword.exe,d2f1bb2210fa,"User opened malicious Word doc"
+2,2025-06-01T08:01:48Z,WS-12,jdoe,process_start,powershell.exe,C:\Windows\System32\powershell.exe,11aa33ccff29,"PowerShell spawned by winword.exe - suspicious"
+3,2025-06-01T08:01:49Z,WS-12,jdoe,powershell_command,encoded,"powershell -enc JAB...",,"Encoded PS payload executed"
+4,2025-06-01T08:02:01Z,WS-12,jdoe,file_write,C:\Users\jdoe\AppData\Roaming\payload.dll,bb55ff1199aa,"Dropped payload DLL"
+5,2025-06-01T08:02:08Z,WS-12,jdoe,process_start,rundll32.exe,C:\Windows\System32\rundll32.exe,99bb33aa77c1,"DLL loaded via rundll32 (malicious)"
+6,2025-06-01T08:02:20Z,WS-12,jdoe,file_encrypt,C:\Corp\Finance\budget.xlsx.locked,,,"File encrypted"
+7,2025-06-01T08:02:22Z,WS-12,jdoe,file_encrypt,C:\Corp\HR\records.db.locked,,,"File encrypted"
+8,2025-06-01T08:02:30Z,WS-12,jdoe,shadow_copy_delete,vssadmin.exe,C:\Windows\System32\vssadmin.exe,55aa44dd99e1,"Shadow copies deleted"
+9,2025-06-01T08:02:35Z,WS-12,jdoe,note_drop,C:\Users\jdoe\Desktop\READ_ME.txt,,,"Ransom note created"

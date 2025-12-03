@@ -1,0 +1,11 @@
+event_id,timestamp,host,user,alert_type,severity,notes,log_text
+1,2025-05-22T09:01:13Z,HOST-01,jdoe,process_creation,low,"User opened Word document","Process winword.exe spawned on HOST-01 as user jdoe with normal behavior."
+2,2025-05-22T09:03:45Z,HOST-01,jdoe,script_execution,medium,"Macro-enabled document executed script","Word launched powershell.exe with unusual arguments after document open."
+3,2025-05-22T09:04:10Z,HOST-01,jdoe,network_connection,high,"Potential C2 connection","powershell.exe made outbound connection to rare external IP not seen before."
+4,2025-05-22T10:15:27Z,HOST-02,asmith,process_creation,low,"User opened browser","chrome.exe spawned from normal user session."
+5,2025-05-22T11:02:55Z,HOST-03,svc_backup,file_modification,medium,"Backup software edited many files","Backup agent modified multiple files as part of scheduled job."
+6,2025-05-22T11:05:31Z,HOST-04,intern,file_encryption,high,"Rapid file encryption behavior","Unusual process began encrypting user documents in quick succession on HOST-04."
+7,2025-05-22T11:06:10Z,HOST-04,intern,process_termination,high,"Security tool killed suspicious process","EDR terminated encryption process after detecting ransomware-like behavior."
+8,2025-05-22T11:45:02Z,HOST-05,admin,privilege_escalation,high,"Admin account spawned system-level shell","Admin account launched cmd.exe as SYSTEM shortly after logging in."
+9,2025-05-22T11:47:33Z,HOST-05,admin,script_execution,high,"Potential lateral movement script","Powershell script executed to enumerate network shares and local admins."
+10,2025-05-22T12:10:44Z,HOST-02,asmith,process_creation,low,"User opened email client","outlook.exe spawned and behaved normally."

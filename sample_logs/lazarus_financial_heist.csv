@@ -1,0 +1,5 @@
+timestamp,host,user,event_type,process,action,notes
+2025-05-09T14:01:10Z,ATM-CTRL01,svc_atm,process_start,atmcontroller.exe,,"Backdoor injected"
+2025-05-09T14:01:55Z,ATM-CTRL01,svc_atm,network_conn,,203.0.113.77,"Outbound to NK infrastructure"
+2025-05-09T14:02:14Z,ATM-CTRL01,svc_atm,funds_transfer,SWIFT,"Unauthorized transfer initiated"
+2025-05-09T14:02:55Z,ATM-CTRL01,svc_atm,funds_transfer,SWIFT,"Multi-million transfer repeated"

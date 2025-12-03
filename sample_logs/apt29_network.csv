@@ -1,0 +1,4 @@
+timestamp,source_ip,destination_ip,bytes_sent,bytes_received,notes
+2025-03-01T08:19:10Z,10.0.4.55,185.91.204.77,320,200,"HTTPS beacon"
+2025-03-01T08:20:10Z,10.0.4.55,185.91.204.77,315,180,"Beacon"
+2025-03-01T08:21:10Z,10.0.4.55,185.91.204.77,18000,155000,"Large download (stage 2 payload)"

@@ -1,0 +1,7 @@
+event_id,timestamp,source_host,target_host,user,event_type,process,port,notes
+1,2025-06-02T09:10:11Z,WS-05,WS-11,intern,auth_failure,wmiexec,135,"Failed WMI attempt"
+2,2025-06-02T09:12:44Z,WS-05,WS-11,intern,auth_failure,wmiexec,135,"Repeated failures"
+3,2025-06-02T09:14:12Z,WS-05,WS-03,intern,auth_success,psexec,445,"Lateral movement achieved"
+4,2025-06-02T09:20:55Z,WS-03,DC-01,intern,auth_failure,psexec,445,"Attempting domain controller access"
+5,2025-06-02T09:25:12Z,WS-03,WS-22,intern,remote_service_create,sc.exe,445,"Remote service created"
+6,2025-06-02T09:28:30Z,WS-22,WS-22,SYSTEM,file_drop,C:\Windows\Temp\svc_updater.exe,,,"Malicious service dropped"

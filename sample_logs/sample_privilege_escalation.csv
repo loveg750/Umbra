@@ -1,0 +1,6 @@
+event_id,timestamp,user,host,action,notes,log_text
+1,2025-05-23T08:01:10Z,asmith,WORKSTATION-04,token_manipulation,"User attempted to duplicate security token","User asmith attempted to duplicate access token using whoami /priv and subsequent token manipulation tools."
+2,2025-05-23T08:03:51Z,asmith,WORKSTATION-04,service_abuse,"User modified system service permissions","User modified permissions on service 'Spooler' allowing non-admin to start/stop it."
+3,2025-05-23T08:06:02Z,asmith,WORKSTATION-04,credential_dump,"Credential dumping attempt","process lsass.exe accessed using suspicious handle via procdump64.exe."
+4,2025-05-23T08:08:45Z,asmith,WORKSTATION-04,privilege_escalation,"User obtained SYSTEM shell","psexec spawned cmd.exe as NT AUTHORITY\\SYSTEM."
+5,2025-05-23T08:10:33Z,asmith,WORKSTATION-04,group_membership,"User added to local administrators group","User was added to local admin group without ticket or approval."

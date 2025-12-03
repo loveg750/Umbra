@@ -1,0 +1,11 @@
+event_id,timestamp,source_ip,destination_ip,source_port,destination_port,protocol,bytes_sent,bytes_received,action,notes
+1,2025-05-22T08:11:05Z,192.168.1.10,8.8.8.8,55432,53,UDP,120,80,allowed,"DNS query"
+2,2025-05-22T08:11:06Z,192.168.1.10,93.184.216.34,55433,443,TCP,3400,5400,allowed,"HTTPS traffic"
+3,2025-05-22T08:35:22Z,192.168.1.22,104.21.12.55,60012,443,TCP,15000,25000,allowed,"User browsing site"
+4,2025-05-22T08:50:10Z,192.168.1.30,185.224.1.10,33445,80,TCP,58000,200,blocked,"Outbound connection to malicious IP"
+5,2025-05-22T09:12:44Z,192.168.1.30,185.224.1.10,33446,443,TCP,102000,1000,blocked,"Repeated connection attempts to known C2"
+6,2025-05-22T09:20:55Z,10.0.0.10,10.0.0.200,443,443,TCP,98000,120000,allowed,"Backup server sync"
+7,2025-05-22T09:35:05Z,10.0.0.15,198.51.100.25,50023,22,TCP,24000,9000,blocked,"Unauthorized SSH attempt"
+8,2025-05-22T09:45:18Z,192.168.1.45,13.107.4.50,49500,443,TCP,8000,12000,allowed,"Connection to Microsoft 365"
+9,2025-05-22T09:50:31Z,192.168.1.45,91.215.85.77,49501,8080,TCP,600,80,blocked,"Proxy traffic to suspicious server"
+10,2025-05-22T10:05:42Z,10.0.0.5,203.0.113.200,60010,443,TCP,500000,20000,alert,"Large data transfer to foreign IP"

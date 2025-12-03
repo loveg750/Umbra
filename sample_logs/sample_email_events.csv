@@ -1,0 +1,11 @@
+event_id,timestamp,recipient,sender,subject,filter_action,notes,log_text
+1,2025-05-22T08:15:03Z,employee1@corp.com,hr@corp.com,"Benefits update",allowed,"Internal HR notice","Internal email from HR to employee1 about benefits update, no links to external sites."
+2,2025-05-22T08:45:27Z,employee2@corp.com,billing@trustedvendor.com,"Invoice for last month",allowed,"Known vendor","Email from known vendor with standard PDF invoice attached."
+3,2025-05-22T09:22:10Z,financelead@corp.com,ceo@corp-co.com,"URGENT: Wire transfer request",quarantined,"Lookalike domain and urgent tone","Email claims to be from CEO asking for urgent wire transfer to new account, sender domain slightly different from real company domain."
+4,2025-05-22T09:40:55Z,user1@corp.com,support@secure-mfa.com,"Reset your MFA immediately",blocked,"Suspicious MFA reset lure","Email urges user to reset MFA via external link that points to mismatched domain."
+5,2025-05-22T10:05:19Z,user2@corp.com,security@corp.com,"Security awareness reminder",allowed,"Internal security training","Legitimate internal security awareness reminder with internal links only."
+6,2025-05-22T10:45:02Z,employee3@corp.com,unknown@random-host.net,"Overdue invoice",quarantined,"Generic phishing with attachment","Email with vague subject and malicious attachment named invoice.exe."
+7,2025-05-22T11:12:44Z,admin@corp.com,no-reply@cloud-service.com,"New login from unknown device",allowed,"Legit security alert","Legitimate alert from cloud provider about login from new device with correct branding and links."
+8,2025-05-22T11:30:37Z,employee4@corp.com,accounts@pay-service.co,"Payment failed - update card",quarantined,"Phishing payment update","Email asks user to update payment card details on fake payment portal with non-matching URL."
+9,2025-05-22T12:05:11Z,itops@corp.com,alerts@corp-edr.com,"EDR daily summary",allowed,"Security summary","Legitimate EDR daily summary email with standard contents."
+10,2025-05-22T12:35:29Z,ceo@corp.com,unknown@temp-mail.io,"Confidential board doc",blocked,"Suspicious external sender","External email to CEO with link to download 'confidential board document' from file-sharing site that is rarely used."
