@@ -1,0 +1,60 @@
+[
+  {
+    "id": "AUTH-TI-001",
+    "name": "Credential Stuffing Source IP",
+    "description": "IP known for credential stuffing attempts against multiple accounts (simulated intel).",
+    "severity": "high",
+    "log_type": "auth",
+    "conditions": [
+      {
+        "field": "source_ip",
+        "operator": "equals",
+        "value": "198.51.100.200"
+      },
+      {
+        "field": "failed_count_last_10m",
+        "operator": "greater_than",
+        "value": 20
+      }
+    ],
+    "mitre": ["T1110"],
+    "tags": ["threat_intel", "credential_stuffing"]
+  },
+  {
+    "id": "AUTH-TI-002",
+    "name": "Known Breach Username Pattern",
+    "description": "Logins using accounts flagged as part of a known credential breach list.",
+    "severity": "medium",
+    "log_type": "auth",
+    "conditions": [
+      {
+        "field": "username_flagged_breached",
+        "operator": "equals",
+        "value": true
+      }
+    ],
+    "mitre": ["T1078"],
+    "tags": ["threat_intel", "compromised_account"]
+  },
+  {
+    "id": "AUTH-TI-003",
+    "name": "Suspicious Foreign Login Cluster",
+    "description": "Rapid sequence of logins from a foreign region not normally associated with this tenant.",
+    "severity": "high",
+    "log_type": "auth",
+    "conditions": [
+      {
+        "field": "geo_risk_score",
+        "operator": "greater_than",
+        "value": 80
+      },
+      {
+        "field": "login_count_last_5m",
+        "operator": "greater_than",
+        "value": 10
+      }
+    ],
+    "mitre": ["T1133", "T1078"],
+    "tags": ["threat_intel", "geo_anomaly"]
+  }
+]

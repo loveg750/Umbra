@@ -1,0 +1,38 @@
+{
+  "rules": [
+    {
+      "id": "ZERO-001",
+      "category": "exploit_behavior",
+      "name": "Memory Corruption Indicators",
+      "severity": "critical",
+      "pattern": {
+        "crashes_of_system_processes": true,
+        "unexpected_memory_permission_changes": true,
+        "anomalous_heap_allocations": true
+      },
+      "description": "Multiple zero-day exploits begin with memory corruption and permission changes."
+    },
+    {
+      "id": "ZERO-002",
+      "category": "kernel_exploit",
+      "name": "Abnormal Syscall Spikes",
+      "severity": "critical",
+      "pattern": {
+        "syscall_rate_per_second": 500,
+        "target_syscalls": ["NtMapViewOfSection", "NtProtectVirtualMemory", "NtCreateThreadEx"]
+      },
+      "description": "High-rate system call bursts consistent with privilege escalation exploit attempts."
+    },
+    {
+      "id": "ZERO-003",
+      "category": "sandbox_escape",
+      "name": "AppContainer / Browser Escape Attempt",
+      "severity": "high",
+      "pattern": {
+        "restricted_process_modifying_outside_scope": true,
+        "unexpected_named_pipe_access": true
+      },
+      "description": "Behavior associated with modern browser zero-day exploitation."
+    }
+  ]
+}

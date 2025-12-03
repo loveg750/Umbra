@@ -1,0 +1,492 @@
+[
+  {
+    "id": "ENDPOINT-001",
+    "category": "malware",
+    "name": "Known malicious process execution",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "Execution of known offensive security tool or malware loader.",
+    "pattern": [
+      "mimikatz.exe",
+      "bloodhound.exe",
+      "rundll32 suspicious.dll"
+    ],
+    "tags": ["endpoint", "malware", "tooling", "scenario"],
+    "mitre": ["T1059", "T1003"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "mimikatz.exe" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-002",
+    "category": "malware",
+    "name": "Unsigned binary executed from temp directory",
+    "log_type": "endpoint",
+    "severity": "high",
+    "description": "Malware commonly executes from temp directories to evade detection.",
+    "pattern": [
+      "C:\\\\Users\\\\*\\\\AppData\\\\Local\\\\Temp\\\\*.exe"
+    ],
+    "tags": ["endpoint", "malware", "persistence", "scenario"],
+    "mitre": ["T1059", "T1204"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "AppData\\\\\\\\Local\\\\\\\\Temp" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-003",
+    "category": "privilege_escalation",
+    "name": "Process spawning PowerShell as SYSTEM",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "Behavior consistent with privileged escalation or post-exploitation.",
+    "pattern": [
+      "PowerShell",
+      "NT AUTHORITY\\\\SYSTEM"
+    ],
+    "tags": ["endpoint", "privilege-escalation", "post-exploitation", "scenario"],
+    "mitre": ["T1059", "T1068"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "PowerShell as NT AUTHORITY\\\\\\\\SYSTEM" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-004",
+    "category": "privilege_escalation",
+    "name": "UAC bypass attempt",
+    "log_type": "endpoint",
+    "severity": "high",
+    "description": "Execution of known UAC bypass abusing Windows system tools.",
+    "pattern": [
+      "fodhelper.exe",
+      "eventvwr.exe",
+      "sdclt.exe"
+    ],
+    "tags": ["endpoint", "privilege-escalation", "uac-bypass", "scenario"],
+    "mitre": ["T1548"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "fodhelper.exe" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-005",
+    "category": "persistence",
+    "name": "Registry run key addition",
+    "log_type": "endpoint",
+    "severity": "medium",
+    "description": "Common persistence mechanism via registry autorun.",
+    "pattern": [
+      "HKCU\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run",
+      "HKLM\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run"
+    ],
+    "tags": ["endpoint", "persistence", "registry", "scenario"],
+    "mitre": ["T1060"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "CurrentVersion\\\\\\\\Run" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-006",
+    "category": "persistence",
+    "name": "Scheduled task created by non-admin user",
+    "log_type": "endpoint",
+    "severity": "high",
+    "description": "Attackers often create scheduled tasks for persistence.",
+    "pattern": [
+      "schtasks.exe",
+      "/create"
+    ],
+    "tags": ["endpoint", "persistence", "scheduled-task", "scenario"],
+    "mitre": ["T1053"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "schtasks.exe /create" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-007",
+    "category": "zero_day_behavior",
+    "name": "Unknown binary with high entropy",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "High entropy often indicates packed/obfuscated zero-day payloads.",
+    "pattern": [
+      "entropy:high"
+    ],
+    "tags": ["endpoint", "zero-day", "obfuscation", "scenario"],
+    "mitre": ["T1027"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "entropy:high" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-008",
+    "category": "zero_day_behavior",
+    "name": "Executable making unexpected syscalls",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "Syscall patterns commonly associated with zero-day exploitation.",
+    "pattern": [
+      "syscall:NtProtectVirtualMemory",
+      "syscall:NtCreateThreadEx"
+    ],
+    "tags": ["endpoint", "zero-day", "exploit-attempt", "scenario"],
+    "mitre": ["T1203"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "NtCreateThreadEx" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-009",
+    "category": "suspicious_activity",
+    "name": "Unexpected parent-child process chain",
+    "log_type": "endpoint",
+    "severity": "high",
+    "description": "Macro-enabled malware often spawns shell processes.",
+    "pattern": [
+      "winword.exe -> cmd.exe",
+      "excel.exe -> powershell.exe",
+      "outlook.exe -> wscript.exe"
+    ],
+    "tags": ["endpoint", "suspicious", "parent-child", "scenario"],
+    "mitre": ["T1204", "T1059"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "winword.exe -> cmd.exe" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-010",
+    "category": "lateral_movement",
+    "name": "Remote service creation",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "Used during lateral movement to drop and run malicious binaries.",
+    "pattern": [
+      "sc.exe",
+      "create",
+      "binPath"
+    ],
+    "tags": ["endpoint", "lateral-movement", "service-creation", "scenario"],
+    "mitre": ["T1021", "T1543"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "sc.exe create" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-011",
+    "category": "lateral_movement",
+    "name": "Remote registry manipulation",
+    "log_type": "endpoint",
+    "severity": "high",
+    "description": "Often indicates lateral movement or persistence setup.",
+    "pattern": [
+      "reg.exe",
+      "connect",
+      "\\\\\\\\\\\\\\\\*\\\\\\\\HKLM"
+    ],
+    "tags": ["endpoint", "lateral-movement", "registry", "scenario"],
+    "mitre": ["T1112", "T1021"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "reg.exe connect" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-012",
+    "category": "credential_access",
+    "name": "LSASS memory access attempt",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "Mimikatz-style credential harvesting behavior.",
+    "pattern": [
+      "lsass.exe",
+      "PROCESS_VM_READ",
+      "minidump"
+    ],
+    "tags": ["endpoint", "credential-access", "lsass", "scenario"],
+    "mitre": ["T1003"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "lsass.exe" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-013",
+    "category": "credential_access",
+    "name": "SAM/SECURITY/NTDS file access",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "Attempt to extract credential stores.",
+    "pattern": [
+      "\\\\Windows\\\\System32\\\\config\\\\SAM",
+      "\\\\Windows\\\\System32\\\\config\\\\SECURITY",
+      "NTDS.dit"
+    ],
+    "tags": ["endpoint", "credential-access", "file-access", "scenario"],
+    "mitre": ["T1003"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "NTDS.dit" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-014",
+    "category": "data_collection",
+    "name": "Mass file access in short time",
+    "log_type": "endpoint",
+    "severity": "high",
+    "description": "Pre-exfiltration file harvesting behavior.",
+    "pattern": [
+      "file_read_rate:high"
+    ],
+    "tags": ["endpoint", "data-collection", "exfiltration-prep", "scenario"],
+    "mitre": ["T1119"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "file_read_rate:high" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-015",
+    "category": "exploit_attempts",
+    "name": "Suspicious DLL injection attempt",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "Classic DLL injection behavior frequently used by attackers.",
+    "pattern": [
+      "CreateRemoteThread",
+      "VirtualAllocEx",
+      "WriteProcessMemory"
+    ],
+    "tags": ["endpoint", "exploit-attempt", "dll-injection", "scenario"],
+    "mitre": ["T1055"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "CreateRemoteThread" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-016",
+    "category": "exploit_attempts",
+    "name": "Executable modifying memory protection",
+    "log_type": "endpoint",
+    "severity": "high",
+    "description": "Used in exploits to make shellcode executable.",
+    "pattern": [
+      "PAGE_EXECUTE_READWRITE"
+    ],
+    "tags": ["endpoint", "exploit-attempt", "memory-protection", "scenario"],
+    "mitre": ["T1068", "T1203"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "PAGE_EXECUTE_READWRITE" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-017",
+    "category": "ransomware",
+    "name": "Mass file renaming with unusual extension",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "Common ransomware behavior.",
+    "pattern": [
+      "*.locked",
+      "*.encrypted",
+      "*.crypt"
+    ],
+    "tags": ["endpoint", "ransomware", "file-encryption", "scenario"],
+    "mitre": ["T1486"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "ransomware-style file renaming" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-018",
+    "category": "ransomware",
+    "name": "Shadow copy deletion",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "Ransomware often wipes backups to prevent recovery.",
+    "pattern": [
+      "vssadmin.exe delete shadows"
+    ],
+    "tags": ["endpoint", "ransomware", "backup-destruction", "scenario"],
+    "mitre": ["T1490"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "vssadmin.exe delete shadows" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-019",
+    "category": "covert_channels",
+    "name": "Process communicating via ICMP covert channel",
+    "log_type": "endpoint",
+    "severity": "high",
+    "description": "ICMP used as command-and-control or exfiltration path.",
+    "pattern": [
+      "icmp_payload:nonstandard"
+    ],
+    "tags": ["endpoint", "covert-channel", "icmp", "scenario"],
+    "mitre": ["T1041", "T1095"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "icmp_payload:nonstandard" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-020",
+    "category": "covert_channels",
+    "name": "Process embedding data inside images (steganography)",
+    "log_type": "endpoint",
+    "severity": "high",
+    "description": "Indicates advanced exfiltration through PNG/JPG files.",
+    "pattern": [
+      "steg_activity:detected"
+    ],
+    "tags": ["endpoint", "covert-channel", "steganography", "scenario", "infostealer"],
+    "mitre": ["T1020", "T1132"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "steg_activity:detected" }
+    ]
+  },
+  {
+    "id": "ENDPOINT-021",
+    "name": "Infostealer artifact found in browser profile",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "Umbra detected artifacts in the browser profile consistent with potential infostealer behavior.",
+    "tags": ["endpoint", "infostealer", "threat_intel"],
+    "mitre": ["T1555"],
+    "conditions": [
+      { "field": "log_type", "operator": "equals", "value": "endpoint" },
+      { "field": "event", "operator": "contains", "value": "Infostealer artifact found in browser profile" }
+    ]
+  },
+
+  {
+    "id": "ENDPOINT_KNOWN_TOOL_MIMIKATZ_PROCNAME_01",
+    "name": "Known malicious tool: mimikatz (process_name/image)",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "Process name or image indicates mimikatz, independent of raw event text.",
+    "tags": ["endpoint", "malware", "tooling", "scenario"],
+    "mitre": ["T1003", "T1059"],
+    "conditions": [
+      { "field": "process_name", "operator": "contains", "value": "mimikatz" }
+    ]
+  },
+  {
+    "id": "ENDPOINT_KNOWN_TOOL_BLOODHOUND_PROCNAME_01",
+    "name": "Known malicious tool: BloodHound (process_name/image)",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "Process name or image indicates BloodHound enumeration tooling.",
+    "tags": ["endpoint", "malware", "tooling", "scenario"],
+    "mitre": ["T1069", "T1059"],
+    "conditions": [
+      { "field": "process_name", "operator": "contains", "value": "bloodhound" }
+    ]
+  },
+  {
+    "id": "ENDPOINT_TEMP_EXEC_GENERIC_IMAGE_01",
+    "name": "Executable running from temp directory (image path)",
+    "log_type": "endpoint",
+    "severity": "high",
+    "description": "Executable image path indicates execution from a temp directory, common for malware staging.",
+    "tags": ["endpoint", "malware", "persistence", "scenario"],
+    "mitre": ["T1204", "T1059"],
+    "conditions": [
+      { "field": "image", "operator": "contains", "value": "AppData\\\\\\\\Local\\\\\\\\Temp" }
+    ]
+  },
+  {
+    "id": "ENDPOINT_TEMP_EXEC_GENERIC_POSIX_01",
+    "name": "Executable running from /tmp (POSIX)",
+    "log_type": "endpoint",
+    "severity": "high",
+    "description": "Binary executing from /tmp, often used in Unix-like malware staging.",
+    "tags": ["endpoint", "malware", "persistence", "scenario"],
+    "mitre": ["T1059"],
+    "conditions": [
+      { "field": "image", "operator": "contains", "value": "/tmp/" }
+    ]
+  },
+  {
+    "id": "ENDPOINT_OFFICE_SHELL_CHAIN_NORMALIZED_01",
+    "name": "Office spawning shell (parent/child normalized)",
+    "log_type": "endpoint",
+    "severity": "high",
+    "description": "Normalized parent/child fields show Office spawning a shell, typical of macro malware.",
+    "tags": ["endpoint", "suspicious", "parent-child", "scenario"],
+    "mitre": ["T1204", "T1059"],
+    "conditions": [
+      { "field": "parent_process", "operator": "contains", "value": "winword.exe" },
+      { "field": "process_name", "operator": "contains", "value": "cmd.exe" }
+    ]
+  },
+  {
+    "id": "ENDPOINT_RANSOMWARE_EXTENSION_GENERIC_01",
+    "name": "Ransomware-style file extensions (normalized)",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "File extension indicates likely encrypted/ransomware-modified data.",
+    "tags": ["endpoint", "ransomware", "file-encryption", "scenario"],
+    "mitre": ["T1486"],
+    "conditions": [
+      {
+        "field": "file_extension",
+        "operator": "in",
+        "value": [".locked", ".encrypted", ".crypt"]
+      }
+    ]
+  },
+  {
+    "id": "ENDPOINT_GENERIC_LABEL_MALICIOUS_01",
+    "name": "Endpoint row labeled as malicious (training data)",
+    "log_type": "endpoint",
+    "severity": "high",
+    "description": "Dataset label or annotation marks this row as malicious endpoint activity.",
+    "tags": ["endpoint", "training-data", "scenario"],
+    "mitre": ["T1059"],
+    "conditions": [
+      { "field": "label", "operator": "contains", "value": "malicious" }
+    ]
+  },
+  {
+    "id": "ENDPOINT_GENERIC_SCENARIO_INFOSTEALER_01",
+    "name": "Endpoint scenario labeled as infostealer",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "Scenario label indicates infostealer behavior in this endpoint record.",
+    "tags": ["endpoint", "infostealer", "training-data"],
+    "mitre": ["T1555"],
+    "conditions": [
+      { "field": "scenario_label", "operator": "contains", "value": "infostealer" }
+    ]
+  },
+  {
+    "id": "ENDPOINT_BROWSER_ARTIFACT_NORMALIZED_01",
+    "name": "Browser profile infostealer artifact (normalized fields)",
+    "log_type": "endpoint",
+    "severity": "critical",
+    "description": "Normalized EDR fields show a browser profile path and an infostealer artifact flag.",
+    "tags": ["endpoint", "infostealer", "credential-access"],
+    "mitre": ["T1555"],
+    "conditions": [
+      { "field": "file_path", "operator": "contains", "value": "AppData\\\\\\\\Local\\\\\\\\Google\\\\\\\\Chrome\\\\\\\\User Data" },
+      { "field": "event", "operator": "contains", "value": "infostealer" }
+    ]
+  }
+]

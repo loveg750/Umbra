@@ -1,0 +1,35 @@
+{
+  "rules": [
+    {
+      "id": "INSIDER-001",
+      "name": "Sudden Spike in File Access",
+      "severity": "high",
+      "pattern": {
+        "file_access_spike_factor": 6,
+        "sensitive_only": true
+      },
+      "description": "Large, sudden increase in access of sensitive files."
+    },
+    {
+      "id": "INSIDER-002",
+      "name": "Privilege Misuse",
+      "severity": "critical",
+      "pattern": {
+        "user_role": "regular_employee",
+        "admin_operations_attempted": true
+      },
+      "description": "Regular user attempting administrative actions."
+    },
+    {
+      "id": "INSIDER-003",
+      "name": "Data Hoarding Before Departure",
+      "severity": "critical",
+      "pattern": {
+        "resignation_window_days": 45,
+        "large_archives_created": true,
+        "off_hours": true
+      },
+      "description": "Employees preparing to leave may collect data for exfiltration."
+    }
+  ]
+}
