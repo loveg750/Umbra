@@ -1,7 +1,0 @@
-event_id,timestamp,user,hostname,source_ip,destination_ip,bytes_exfiltrated,method,classification,notes
-1,2025-05-22T09:05:11Z,asmith,WS-09,192.168.1.30,185.224.1.10,450000,https,high,"Unusual HTTPS upload to untrusted host"
-2,2025-05-22T09:07:41Z,asmith,WS-09,192.168.1.30,185.224.1.10,890000,https,critical,"Possible staged data exfiltration"
-3,2025-05-22T09:10:25Z,asmith,WS-09,192.168.1.30,51.15.200.44,1200000,sftp,critical,"Connection to rare SFTP server"
-4,2025-05-22T09:14:52Z,knguyen,WS-15,192.168.1.45,203.0.113.10,65000,http,medium,"Upload to file-sharing service"
-5,2025-05-22T09:22:30Z,svc_backup,WS-22,10.0.0.10,10.0.0.200,5000000,nfs,allowed,"Scheduled large backup transfer"
-6,2025-05-22T10:02:11Z,root,WS-11,10.0.0.12,44.12.50.8,2900000,scp,critical,"Root user transferring large file to unknown host"
