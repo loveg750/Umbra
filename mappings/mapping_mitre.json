@@ -1,0 +1,149 @@
+{
+  "MAPPINGS": {
+    "ANOMALY_GEO_IMPOSSIBLE": {
+      "PRIMARY_TACTIC": "Credential Access",
+      "TECHNIQUES": ["T1078"],
+      "CONFIDENCE": 0.9
+    },
+    "ANOMALY_DATA_VOLUME_SPIKE": {
+      "PRIMARY_TACTIC": "Exfiltration",
+      "TECHNIQUES": ["T1041", "T1048", "T1567"],
+      "CONFIDENCE": 0.92
+    },
+    "ANOMALY_NEW_RESOURCE_ACCESS": {
+      "PRIMARY_TACTIC": "Discovery",
+      "TECHNIQUES": ["T1018", "T1135"],
+      "CONFIDENCE": 0.88
+    },
+    "ANOMALY_TEMPORAL_DEVIATION": {
+      "PRIMARY_TACTIC": "Credential Access",
+      "TECHNIQUES": ["T1078"],
+      "CONFIDENCE": 0.87
+    },
+    "ANOMALY_FIRST_TIME_SUCCESSFUL_LOGIN": {
+      "PRIMARY_TACTIC": "Credential Access",
+      "TECHNIQUES": ["T1078", "T1133"],
+      "CONFIDENCE": 0.89
+    },
+    "ANOMALY_SUDDEN_PRIV_ESC": {
+      "PRIMARY_TACTIC": "Privilege Escalation",
+      "TECHNIQUES": ["T1068", "T1548"],
+      "CONFIDENCE": 0.9
+    },
+    "ANOMALY_FIRST_ADMIN_ACTION": {
+      "PRIMARY_TACTIC": "Privilege Escalation",
+      "TECHNIQUES": ["T1078", "T1098"],
+      "CONFIDENCE": 0.88
+    },
+    "ANOMALY_PROCESS_NEW_EXECUTION": {
+      "PRIMARY_TACTIC": "Execution",
+      "TECHNIQUES": ["T1204", "T1059"],
+      "CONFIDENCE": 0.89
+    },
+    "ANOMALY_RARE_COMMAND_USAGE": {
+      "PRIMARY_TACTIC": "Execution",
+      "TECHNIQUES": ["T1059"],
+      "CONFIDENCE": 0.87
+    },
+    "ANOMALY_UNUSUAL_IP_ASN": {
+      "PRIMARY_TACTIC": "Credential Access",
+      "TECHNIQUES": ["T1078"],
+      "CONFIDENCE": 0.86
+    },
+    "ANOMALY_UNUSUAL_DEVICE_FINGERPRINT": {
+      "PRIMARY_TACTIC": "Credential Access",
+      "TECHNIQUES": ["T1078"],
+      "CONFIDENCE": 0.86
+    },
+    "ANOMALY_SLOW_EXFIL_PATTERN": {
+      "PRIMARY_TACTIC": "Exfiltration",
+      "TECHNIQUES": ["T1041", "T1048", "T1567"],
+      "CONFIDENCE": 0.91
+    },
+    "ANOMALY_LATERAL_MOVEMENT_CHAIN": {
+      "PRIMARY_TACTIC": "Lateral Movement",
+      "TECHNIQUES": ["T1021"],
+      "CONFIDENCE": 0.9
+    },
+    "ANOMALY_BRUTE_FORCE_RAMPING": {
+      "PRIMARY_TACTIC": "Credential Access",
+      "TECHNIQUES": ["T1110"],
+      "CONFIDENCE": 0.92
+    },
+    "ANOMALY_PRIV_ESC_SEQUENCE": {
+      "PRIMARY_TACTIC": "Privilege Escalation",
+      "TECHNIQUES": ["T1068", "T1548", "T1078"],
+      "CONFIDENCE": 0.91
+    },
+    "IOC_KNOWN_BAD_IP": {
+      "PRIMARY_TACTIC": "Command and Control",
+      "TECHNIQUES": ["T1071", "T1041"],
+      "CONFIDENCE": 0.95
+    },
+    "IOC_KNOWN_BAD_DOMAIN": {
+      "PRIMARY_TACTIC": "Command and Control",
+      "TECHNIQUES": ["T1071"],
+      "CONFIDENCE": 0.93
+    },
+    "IOC_MALICIOUS_URL": {
+      "PRIMARY_TACTIC": "Initial Access",
+      "TECHNIQUES": ["T1566.002", "T1189"],
+      "CONFIDENCE": 0.94
+    },
+    "IOC_MALWARE_HASH_MATCH": {
+      "PRIMARY_TACTIC": "Execution",
+      "TECHNIQUES": ["T1204", "T1105"],
+      "CONFIDENCE": 0.96
+    },
+    "IOC_C2_COMMUNICATION_MATCH": {
+      "PRIMARY_TACTIC": "Command and Control",
+      "TECHNIQUES": ["T1071"],
+      "CONFIDENCE": 0.95
+    },
+    "IOC_KEV_EXPLOIT_ACTIVITY": {
+      "PRIMARY_TACTIC": "Initial Access",
+      "TECHNIQUES": ["T1190", "T1203"],
+      "CONFIDENCE": 0.94
+    },
+    "IOC_PHISHING_URL_MATCH": {
+      "PRIMARY_TACTIC": "Initial Access",
+      "TECHNIQUES": ["T1566.002"],
+      "CONFIDENCE": 0.93
+    },
+    "IOC_MALWARE_DROP_SITE": {
+      "PRIMARY_TACTIC": "Initial Access",
+      "TECHNIQUES": ["T1189", "T1204"],
+      "CONFIDENCE": 0.93
+    },
+    "IOC_BOTNET_C2_MATCH": {
+      "PRIMARY_TACTIC": "Command and Control",
+      "TECHNIQUES": ["T1071", "T1095"],
+      "CONFIDENCE": 0.95
+    },
+    "IOC_SUSPICIOUS_ASN_MATCH": {
+      "PRIMARY_TACTIC": "Command and Control",
+      "TECHNIQUES": ["T1071"],
+      "CONFIDENCE": 0.9
+    },
+    "IOC_TOR_SUSPICIOUS_COMMUNICATION": {
+      "PRIMARY_TACTIC": "Command and Control",
+      "TECHNIQUES": ["T1090", "T1071"],
+      "CONFIDENCE": 0.91
+    },
+    "IOC_RANSOMWARE_NOTE_IOC": {
+      "PRIMARY_TACTIC": "Impact",
+      "TECHNIQUES": ["T1486"],
+      "CONFIDENCE": 0.96
+    },
+    "IOC_KNOWN_PHISHING_SENDER": {
+      "PRIMARY_TACTIC": "Initial Access",
+      "TECHNIQUES": ["T1566"],
+      "CONFIDENCE": 0.92
+    },
+    "IOC_MALICIOUS_TLS_FINGERPRINT": {
+      "PRIMARY_TACTIC": "Command and Control",
+      "TECHNIQUES": ["T1071", "T1573"],
+      "CONFIDENCE": 0.91
+    }
+  }
+}
