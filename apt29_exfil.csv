@@ -1,3 +1,0 @@
-timestamp,user,hostname,destination_ip,bytes_exfiltrated,notes
-2025-03-01T08:25:44Z,executive1,WS-22,185.91.204.77,1200000,"Credential dump exfil"
-2025-03-01T08:27:11Z,executive1,WS-22,185.91.204.77,22000000,"Sensitive document exfil"
