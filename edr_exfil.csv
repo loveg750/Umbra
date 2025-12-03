@@ -1,2 +1,0 @@
-timestamp,user,hostname,destination_ip,bytes_exfiltrated,notes
-2025-06-06T09:12:33Z,asmith,WS-09,185.224.77.101,2400000,"Exfil of documents"
